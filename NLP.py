@@ -72,6 +72,7 @@ uplifting = word2vec("uplifting").vector
 
 # Finding simiarlity between two word embeddings
 cosine_similarity_score = cosine_similarity([sad], [uplifting])
+print("Cosine_similarity_score: ", cosine_similarity_score)
 
 # Building a simple neural network for word embeddings (didn't touch this too much bc it seems important)
 class Net(nn.Module):
