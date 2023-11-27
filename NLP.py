@@ -9,17 +9,27 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from tqdm import tqdm
+import math
 
 # Download NLTK resources
 nltk.download('stopwords')
 nltk.download('punkt')
 nltk.download('wordnet')
 
-# This would be change to song info
+# Song descriptions
+# In this example, the first song is Happy by Pharrel Williams, second is Something in the Way by Nirvanna,
+# and third is Shake if Off by Taylor Swift
 X_train = [
-    'The quick brown fox jumps over the lazy dog.',
-    'Brown foxes are bigger than dogs.',
-    'Foxes can jump quickly.'
+    'vibrant and upbeat, infectious combination of funky rhythms, catchy melodies,\
+          and a rich blend of pop, funk, and soul elements that collectively create a\
+              joyous and celebratory,' 
+    'hauntingly atmospheric, marked by a raw and intimate acoustic guitar, plaintive vocals,\
+          and a somber, introspective ambiance that exudes a melancholic, haunting, and introspective\
+              quality, creating an emotionally charged and uniquely evocative sonic experience',
+    'exuberant and buoyant pop anthem, characterized by its infectious, upbeat tempo, effervescent melodies,\
+          and a blend of vibrant instrumentation, including catchy synth lines and a lively horn section,\
+              all underscored confident and playful vocals, resulting in a joyous, empowering, and\
+                  irresistibly catchy musical celebration.'
 ]
 
 # Function for text preprocessing
@@ -54,11 +64,11 @@ clf = svm.SVC()
 
 # Word embeddings using Spacy
 word2vec = spacy.load("en_core_web_sm")
-book = word2vec("book").vector
-fantastic = word2vec("fantastic").vector
+sad = word2vec("sad").vector
+uplifting = word2vec("uplifting").vector
 
-# IMPORTANT
-cosine_similarity_score = cosine_similarity([book], [fantastic])
+# Finding simiarlity between two word embeddings
+cosine_similarity_score = cosine_similarity([sad], [uplifting])
 
 # Building a simple neural network for word embeddings (didn't touch this too much bc it seems important)
 class Net(nn.Module):
@@ -74,7 +84,7 @@ class Net(nn.Module):
         return log_probs
 
 # Define vocabulary size
-vocab_size =  # Fill in the actual value
+vocab_size =  3 # Fill in the actual value
 
 # Initialize the neural network
 embedding_dim = 3
