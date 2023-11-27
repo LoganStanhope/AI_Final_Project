@@ -9,12 +9,12 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from tqdm import tqdm
-import math
+from sklearn.metrics.pairwise import cosine_similarity
 
 # Download NLTK resources
-nltk.download('stopwords')
 nltk.download('punkt')
 nltk.download('wordnet')
+nltk.download('stopwords')
 
 # Song descriptions
 # In this example, the first song is Happy by Pharrel Williams, second is Something in the Way by Nirvanna,
@@ -31,6 +31,9 @@ X_train = [
               all underscored confident and playful vocals, resulting in a joyous, empowering, and\
                   irresistibly catchy musical celebration.'
 ]
+
+# Example categorical labels
+y_train = ['sad', 'happy', 'angry']  
 
 # Function for text preprocessing
 def preprocess(X):
@@ -84,7 +87,7 @@ class Net(nn.Module):
         return log_probs
 
 # Define vocabulary size
-vocab_size =  3 # Fill in the actual value
+vocab_size =  3 
 
 # Initialize the neural network
 embedding_dim = 3
@@ -108,3 +111,7 @@ print(model.linear2.weight.data)
 print(model.linear2.bias.data)
 
 # Note: Visualization code is not provided (link to Matplotlib 3D scatter plot documentation).
+
+
+
+
