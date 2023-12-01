@@ -29,7 +29,7 @@ X_train = [
     'exuberant fusion of upbeat pop and soulful R&B,infectious energy, uplifting vibe, lively percussion, vibrant brass,celebratory atmosphere, message of self-love and confidence, catchy melodies, funky basslines, perfect balance of modern and retro influences, feel-good spirit, and a sassy and empowering edge'
     'powerful and introspective ballad,emotional depth and raw vulnerability, heartfelt vocals, minimalist yet impactful arrangement of piano, subtle electronic elements, gradual intensity, sense of catharsis, self-discovery and empowerment, restrained yet emotive instrumentation, and a poignant and empowering musical journey.'
     'lively, infectious childrens song, upbeat tempo, repetitive melody, cheerful, whimsical, catchy, playful, bright and colorful, joy, excitement, animated, cheerful, fun, and interactive',
-    'ultry and atmospheric R&B track that weaves a tale of love, desire, and the complexities of modern relationships. The song features a slow and seductive tempo, creating a moody and introspective vibe. The production incorporates smooth and ethereal instrumentals, with a prominent use of synths and a laid-back beat.']
+    'sultry and atmospheric R&B track that weaves a tale of love, desire, and the complexities of modern relationships. The song features a slow and seductive tempo, creating a moody and introspective vibe. The production incorporates smooth and ethereal instrumentals, with a prominent use of synths and a laid-back beat.']
 
 
 # Example categorical labels
